@@ -1,0 +1,43 @@
+.column-shortcode {
+    position: relative;
+
+    .matt_copied_caption {
+        position: absolute;
+        top: 13px;
+        right: 17px;
+        font-size: 12px;
+        color: #0aa700;
+        font-weight: 500;
+    }
+}
+
+.form-saved-popup,
+.form-error-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 20px;
+    background: white;
+    transform: translate(-50%, -50%);
+}
+
+.form-saved-popup {
+    border: 2px solid green;
+    color: #0aa700;
+}
+
+.form-error-popup {
+    border: 2px solid rgb(187, 0, 0);
+    color: rgb(187, 0, 0);
+}
+
+.form-builder {
+    margin-top: 20px;
+}
+
+#titlediv {
+    margin-top: 10px;
+}

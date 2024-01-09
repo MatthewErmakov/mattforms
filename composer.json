@@ -1,0 +1,30 @@
+{
+    "name": "mattwp/forms",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Yermakov",
+            "email": "mazdaraser.91@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "mazdaraser.91@gmail.com"
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MattForms\\App\\Abstract\\": "app/Abstracts/",
+            "MattForms\\App\\Model\\": "app/Models/",
+            "MattForms\\App\\Controller\\Admin\\": "app/Controllers/Admin/",
+            "MattForms\\App\\Controller\\Front\\": "app/Controllers/Front/",
+            "MattForms\\App\\Resource\\Admin\\": "app/Resources/Admin/",
+            "MattForms\\App\\Resource\\Front\\": "app/Resources/Front/",
+            "MattForms\\App\\Trait\\": "app/Traits/",
+            "MattForms\\App\\": "app/"
+        }
+    }
+}
