@@ -20,9 +20,11 @@ class AllForms extends Controller {
         $this->plugin = $plugin;
     }
 
+    public function actions() {
+        add_action( 'admin_notices', [ $this, 'admin_notices_output' ] );
+    }
+
     public function renderPage() {
-        $form = new Form( "Title333", [ 'field'=>'field' ], 4 );
-        
         $this->render( 'admin/all-forms', [
             'admin_page_title' => get_admin_page_title(),
 
@@ -39,4 +41,15 @@ class AllForms extends Controller {
         $GLOBALS['AllFormsTable'] = new AllFormsTable( $this->plugin, $this->get_forms() );
     }
 
+    public function admin_notices_output() {
+        global $pagenow;
+            
+        if ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && $_GET['page'] === 'matt_all_forms' ) {
+            $message = isset( $_COOKIE['matt_forms_notice'] ) ? $_COOKIE['matt_forms_notice'] : '';
+                
+            if ( $message !== '' ) {
+                echo sprintf( '<div class="notice notice-warning is-dismissible">%s</div>', $message );
+            }
+        }
+    }
 }

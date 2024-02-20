@@ -62,7 +62,7 @@ class ComposerStaticInitd3ce01a3c781cf0272e898d6259f9398
         'MattForms\\App\\Controller\\Admin\\AllForms' => __DIR__ . '/../..' . '/app/Controllers/Admin/AllForms.php',
         'MattForms\\App\\Controller\\Admin\\EditForm' => __DIR__ . '/../..' . '/app/Controllers/Admin/EditForm.php',
         'MattForms\\App\\Controller\\Admin\\Settings' => __DIR__ . '/../..' . '/app/Controllers/Admin/Settings.php',
-        'MattForms\\App\\Controller\\Front\\Hello' => __DIR__ . '/../..' . '/app/Controllers/Front/Hello.php',
+        'MattForms\\App\\Controller\\Front\\Shortcode' => __DIR__ . '/../..' . '/app/Controllers/Front/Shortcode.php',
         'MattForms\\App\\Kernel' => __DIR__ . '/../..' . '/app/Kernel.php',
         'MattForms\\App\\Model\\Form' => __DIR__ . '/../..' . '/app/Models/Form.php',
         'MattForms\\App\\Resource\\Admin\\AllFormsTable' => __DIR__ . '/../..' . '/app/Resources/Admin/AllFormsTable.php',

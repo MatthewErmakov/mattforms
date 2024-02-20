@@ -13,6 +13,10 @@ abstract class Controller {
      * @param \MattForms\App\Kernel $plugin
      */
     public function __construct( \MattForms\App\Kernel $plugin ) {
+        global $wpdb;
+
+        $this->wpdb = $wpdb;
         $this->plugin = $plugin; 
     }
+
 }

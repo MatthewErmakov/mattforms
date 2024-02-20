@@ -1,0 +1,11 @@
+.checkbox-group {
+    .other {
+        input:checked + .custom-value {
+            display: inline-block;
+        }
+
+        .custom-value {
+            display: none;
+        }
+    }
+}

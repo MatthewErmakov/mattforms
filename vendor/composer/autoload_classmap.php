@@ -12,7 +12,7 @@ return array(
     'MattForms\\App\\Controller\\Admin\\AllForms' => $baseDir . '/app/Controllers/Admin/AllForms.php',
     'MattForms\\App\\Controller\\Admin\\EditForm' => $baseDir . '/app/Controllers/Admin/EditForm.php',
     'MattForms\\App\\Controller\\Admin\\Settings' => $baseDir . '/app/Controllers/Admin/Settings.php',
-    'MattForms\\App\\Controller\\Front\\Hello' => $baseDir . '/app/Controllers/Front/Hello.php',
+    'MattForms\\App\\Controller\\Front\\Shortcode' => $baseDir . '/app/Controllers/Front/Shortcode.php',
     'MattForms\\App\\Kernel' => $baseDir . '/app/Kernel.php',
     'MattForms\\App\\Model\\Form' => $baseDir . '/app/Models/Form.php',
     'MattForms\\App\\Resource\\Admin\\AllFormsTable' => $baseDir . '/app/Resources/Admin/AllFormsTable.php',

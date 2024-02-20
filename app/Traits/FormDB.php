@@ -9,13 +9,13 @@ use \MattForms\App\Model\Form;
  */
 trait FormDB {
 
-    public function get_form_by_id( int $form_id ) : Form {
+    public function get_form_by_id( int $form_id ) {
         $wpdb = $this->wpdb;
         $table_name = $wpdb->prefix . "matt_forms";
         $results = $wpdb->get_results( "SELECT * FROM {$table_name} WHERE `id` = '{$form_id}'" );
         $form = null;
 
-        if ( is_array( $results ) ) {
+        if ( is_array( $results ) && ! empty( $results ) ) {
             $value = reset( $results );
 
             $form = new Form( $value->title, maybe_unserialize( $value->fields ), $value->author_id, $value->modified_at );
@@ -147,5 +147,26 @@ trait FormDB {
         }
 
         return true;
+    }
+
+    /**
+     * Remove form by form_id
+     * 
+     * @param int $form_id
+     * @return bool
+     */
+    public function purge( $form_id ) {
+        $form = $this->get_form_by_id( intval( $form_id ) );
+
+        if ( $form_id !== 0 && ! is_null( $form ) ) {
+            $wpdb = $this->wpdb;
+            $delete = $wpdb->delete( $wpdb->prefix . "matt_forms", [ 'id' => $form_id ], '%d' );
+
+            if ( $delete ) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

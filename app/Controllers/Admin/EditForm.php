@@ -22,6 +22,8 @@ class EditForm extends Controller {
     public function actions() {
         add_action( 'wp_ajax_matt_save_form', [ $this, 'save_form' ] );
         add_action( 'wp_ajax_nopriv_matt_save_form', [ $this, 'save_form' ] );
+
+        add_action( 'admin_init', [ $this, 'delete_form' ] );
     }
 
     public function renderPage() : void {
@@ -75,6 +77,21 @@ class EditForm extends Controller {
             wp_send_json( [
                 'result'  => false
             ], 200 );
+        }
+    }
+
+    public function delete_form() : void {
+        $form_id = isset( $_GET['matt_form_delete'] ) ? $_GET['matt_form_delete'] : 0;
+
+        if ( $form_id !== 0 ) {
+            $result = $this->purge( $form_id );
+
+            if ( $result ) {
+                setcookie( 'matt_forms_notice', '<p>This is an example of a notice that appears on the settings page.</p>', time() + 3600 );
+
+                echo "<script>window.location.href='/wp-admin/admin.php?page=matt_all_forms'</script>";
+                die();
+            }
         }
     }
 }

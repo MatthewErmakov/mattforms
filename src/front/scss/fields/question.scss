@@ -1,0 +1,31 @@
+.question {
+    background: black;
+    color: white;
+    padding: 1px 9px;
+    border-radius: 15px;
+    width: fit-content;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    user-select: none;
+
+    .hint {
+        position: absolute;
+        display: none;
+    }
+
+    &:hover {
+        .hint {
+            opacity: 1;
+            background: black;
+            display: flex;
+            left: 30px;
+            top: -15px;
+            border-radius: 10px;
+            width: 150px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

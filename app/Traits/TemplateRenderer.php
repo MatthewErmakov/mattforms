@@ -20,13 +20,13 @@ trait TemplateRenderer {
         extract( $args );
 
         ob_start();
-        include $this->plugin->path . '/views/' . $template_name . '.php';
+        include $this->plugin->path . 'views/' . $template_name . '.php';
         $result = ob_get_clean();
 
         if ( $output ) {
             print $result;
         } else {
-            return $output;
+            return $result;
         }
     } 
 }

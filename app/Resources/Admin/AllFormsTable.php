@@ -160,25 +160,4 @@ class AllFormsTable extends \WP_List_Table {
 
 	}
 
-	/*
-	// Пример создания действий - ссылок в основной ячейки таблицы при наведении на ряд.
-	// Однако гораздо удобнее указать их напрямую при выводе ячейки - см ячейку customer_name...
-
-	// основная колонка в которой будут показываться действия с элементом
-	protected function get_default_primary_column_name() {
-		return 'disp_name';
-	}
-
-	// действия над элементом для основной колонки (ссылки)
-	protected function handle_row_actions( $post, $column_name, $primary ) {
-		if ( $primary !== $column_name ) return ''; // только для одной ячейки
-
-		$actions = array();
-
-		$actions['edit'] = sprintf( '<a href="%s">%s</a>', '#', __('edit','hb-users') );
-
-		return $this->row_actions( $actions );
-	}
-	*/
-
 }

@@ -46,8 +46,11 @@ class Kernel {
     }
 
     public function admin_assets() {
-        wp_enqueue_script( 'form-builder', $this->url . 'public/assets/main.min.js', $this->version, true );
-        wp_enqueue_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js', $this->version, true );
+        wp_register_script( 'form-builder', $this->url . 'public/assets/admin.min.js', ['jquery'], $this->version, true );
+        wp_register_script( 'jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js', ['jquery'], '1.12.1', true );
+
+        wp_enqueue_script( 'form-builder' );
+        wp_enqueue_script( 'jquery-ui' );
 
         wp_localize_script( 'form-builder', 'mattforms', [
             'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -56,11 +59,11 @@ class Kernel {
     }
 
     public function front_assets() {
-        // enqueue front assets here
+        wp_enqueue_script( 'form-builder', $this->url . 'public/assets/front.min.js', ['jquery'], $this->version, true );
     }
 
     protected function enqueue_assets() {
         add_action( 'admin_enqueue_scripts', [ $this, 'admin_assets' ] );
-        add_action( 'enqueue_scripts', [ $this, 'front_assets' ] );
+        add_action( 'wp_enqueue_scripts', [ $this, 'front_assets' ] );
     }
 }

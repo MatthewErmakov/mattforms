@@ -41,3 +41,24 @@
 #titlediv {
     margin-top: 10px;
 }
+
+.form-wrap.form-builder .form-group.access-wrap {
+    display: none;
+}
+
+.formbuilder-icon-autocomplete.input-control {
+    display: none;
+}
+
+.hidden-field {
+    display: block;
+}
+
+body .form-wrap.form-builder.formbuilder-embedded-bootstrap {
+    .textarea-field .form-group.subtype-wrap,
+    .checkbox-group-field .form-group.toggle-wrap,
+    button.get-data {
+        display: none !important;
+    }
+}
+
